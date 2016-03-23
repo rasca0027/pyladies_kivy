@@ -1,0 +1,32 @@
+
+<WeatherDashboard@BoxLayout>:
+    spacing: 4
+    orientation: 'vertical'
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'wether-photos/sunny.jpg'
+    Label:
+        size_hint: (1, 0.2)
+        font_size: 48
+        text: "Weather App"
+
+    BoxLayout:
+        size_hint: (1, 0.8)
+        orientation: 'vertical'
+        canvas:
+
+            Color:
+                rgba: (0, 0, 0, 0.6)
+            Rectangle:
+                #pos: (self.center_x - self.width * 0.4, self.center_y * 0.4)
+                #size: (self.width * 0.8, self.height * 0.8)
+                size: self.size
+        Image:
+            source: "wether-photos/cloudy-256.png"
+        BoxLayout:
+            Label:
+                text: "Location"
+            Label:
+                text: str(root.degree)
