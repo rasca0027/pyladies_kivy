@@ -5,9 +5,9 @@ import requests
 
 APP_ID = '93b4bc2c1a8637730962f114155febb5'
 
-def get_weather():
-    url = 'http://api.openweathermap.org/data/2.5/weather?q=Taipei&appid=%s'
-    r = requests.get(url % APP_ID)
+def get_weather(cityname):
+    url = 'http://api.openweathermap.org/data/2.5/weather?q=%s&appid=%s'
+    r = requests.get(url % (cityname, APP_ID))
     r = r.json()
     temp = r['main']['temp']
     # convert to celcius degree
@@ -20,7 +20,7 @@ class WeatherDashboard(BoxLayout):
     
     def __init__(self, **kwargs):
         super(WeatherDashboard, self).__init__(**kwargs)
-        self.degree = get_weather()
+        self.degree = get_weather('Taipei')
 
 
 class MyApp(App):
