@@ -1,0 +1,38 @@
+
+<Location@BoxLayout>:
+    spacing: 4
+    orientation: 'vertical'
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'wether-photos/sunny.jpg'
+    BoxLayout:
+        size_hint: (1, 0.2) 
+        Image:
+            source: 'icons/back.png'
+            size_hint: (0.1, 1)
+        Label: 
+            size_hint: (0.9, 1)
+            font_size: 48
+            text: "Location"
+    GridLayout:
+        size_hint: (1, 0.8)
+        cols: 3
+        padding: [100] * 4
+        ToggleButton:
+            text: "Taipei"
+            group: 'area'
+            on_press: root.press_btn('Taipei')
+        ToggleButton:
+            group: 'area'
+            text: "Taoyuan"
+            on_press: root.press_btn('Taoyuan')
+        ToggleButton:
+            group: 'area'
+            text: "Keelung"
+            on_press: root.press_btn('Keelung')
+        ToggleButton:
+            group: 'area'
+            text: "Hsinchu"
+            on_press: root.press_btn('Hsinchu')
