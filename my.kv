@@ -20,6 +20,7 @@
                     Button:
                         size_hint: (0.1, 1)
                         text: "setting"
+                        background_normal: 'icons/setting-148.png'
                         on_press: _screen_manager.current = 'screen2'
                 BoxLayout:
                     size_hint: (1, 0.8)
@@ -35,8 +36,10 @@
                         source: "icons/cloudy-256.png"
                     BoxLayout:
                         Label:
-                            text: "Location"
+                            text: root.location
+                            font_size: 32
                         Label:
+                            font_size: 32
                             text: str(root.degree)
         Screen:
             name: 'screen2'
@@ -55,6 +58,7 @@
                         # source: 'icons/back.png'
                     Button: # temp
                         text: "Back"
+                        background_normal: "icons/back.png"
                         size_hint: (0.1, 1)
                         on_press: _screen_manager.current = 'screen1'
                     Label: 
@@ -68,12 +72,16 @@
                     ToggleButton:
                         text: "Taipei"
                         group: 'area'
+                        on_press: root.change_location('Taipei')
                     ToggleButton:
                         group: 'area'
                         text: "Taoyuan"
+                        on_press: root.change_location('Taoyuan')
                     ToggleButton:
                         group: 'area'
                         text: "Keelung"
+                        on_press: root.change_location('Keelung')
                     ToggleButton:
                         group: 'area'
                         text: "Hsinchu"
+                        on_press: root.change_location('Hsinchu')
