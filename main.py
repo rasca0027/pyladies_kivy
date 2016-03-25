@@ -11,17 +11,19 @@ def get_weather(cityname):
     r = r.json()
     temp = r['main']['temp']
     # convert to celcius degree
-    degree = (temp - 32) * 5 / 9
-    return degree
+    degree = temp - 273
+    humidity = r['main']['humidity']
+    return int(degree), humidity
 
 
 class WeatherDashboard(BoxLayout):
-    degree = NumericProperty(0)    
+    degree = NumericProperty(0)
+    humid = NumericProperty(0)
     location = StringProperty('Taipei')
 
     def __init__(self, **kwargs):
         super(WeatherDashboard, self).__init__(**kwargs)
-        self.degree = get_weather('Taipei')
+        self.degree, self.humid = get_weather('Taipei')
 
     def change_location(self, cityname):
         self.location = cityname

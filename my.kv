@@ -39,8 +39,11 @@
                             text: root.location
                             font_size: 32
                         Label:
-                            font_size: 32
-                            text: str(root.degree)
+                            font_size: 24
+                            text: 'Temperature: ' + str(root.degree) 
+                        Label:
+                            font_size: 24
+                            text: 'Humidity: ' + str(root.humid) + '%'
         Screen:
             name: 'screen2'
             BoxLayout:
