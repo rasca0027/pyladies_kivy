@@ -5,7 +5,7 @@
         Rectangle:
             pos: self.pos
             size: self.size
-            source: 'wether-photos/sunny.jpg' 
+            source: root.bg_pic 
     BoxLayout:
         size_hint: (1, 0.2)
         Label:
@@ -27,7 +27,7 @@
                 pos: (self.center_x - self.width * 0.4, self.center_y * 0.4)
                 size: (self.width * 0.8, self.height * 0.8)
         Image:
-            source: "icons/cloudy-256.png"
+            source: root.weather_icon
         BoxLayout:
             Label:
                 text: 'location'
