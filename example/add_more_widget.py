@@ -1,18 +1,18 @@
-import kivy
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.label import Label
+from kivy.uix.button import Button
 
 
 class MyApp(App):
 
     def build(self):
 
-        l1 = Label(text='Hello world 1')
-        l2 = Label(text='Hello world 2')
+        label = Label(text='Label')
+        button = Button(text='Click')
         layout = BoxLayout()
-        layout.add_widget(l1)
-        layout.add_widget(l2)
+        layout.add_widget(label)
+        layout.add_widget(button)
 
         return layout
 
