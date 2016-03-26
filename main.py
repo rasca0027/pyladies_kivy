@@ -4,7 +4,7 @@ from kivy.properties import NumericProperty, StringProperty
 from kivy.network.urlrequest import UrlRequest
 
 
-APP_ID = '93b4bc2c1a8637730962f114155febb5'
+APP_ID = 'YOUR API KEY'
 url = 'http://api.openweathermap.org/data/2.5/weather?q=%s&appid=%s'
 
 
