@@ -11,11 +11,7 @@ url = 'http://api.openweathermap.org/data/2.5/weather?q=%s&appid=%s'
 class WeatherDashboard(BoxLayout):
     degree = NumericProperty(0)
     humid = NumericProperty(0)
-    location = StringProperty('Taipei')
     status = StringProperty('Clear') # Clear, Clouds, Rain, Mist
-    bg_pic = StringProperty('wether-photos/sunny.jpg')
-    weather_icon = StringProperty('icons/clear-256.png')
-
 
     def __init__(self, **kwargs):
         super(WeatherDashboard, self).__init__(**kwargs)
@@ -26,23 +22,7 @@ class WeatherDashboard(BoxLayout):
         self.degree = int(temp - 273)
         self.humid = results['main']['humidity']
         self.status = results['weather'][0]['main']
-        self.change_status()
 
-    def change_status(self):
-        if self.status == 'Clear':
-            self.bg_pic = 'wether-photos/sunny.jpg'
-            self.weather_icon = 'icons/clear-256.png'
-        elif self.status == 'Rain':
-            self.bg_pic = 'wether-photos/raining.jpg'
-            self.weather_icon = 'icons/raining-256.png'
-        else:
-            self.bg_pic = 'wether-photos/cloudy.jpg'
-            self.weather_icon = 'icons/cloudy-256.png'
-    
-    def change_location(self, cityname):
-        self.location = cityname
-        req = UrlRequest(url % (cityname, APP_ID), self.got_weather)
-        print cityname
 
 class MyApp(App):
 

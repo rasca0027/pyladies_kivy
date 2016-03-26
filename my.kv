@@ -1,90 +1,41 @@
 <WeatherDashboard>:
-    ScreenManager:
-        id: _screen_manager
-        Screen:
-            name: 'screen1' 
-            BoxLayout:
-                spacing: 4
-                orientation: 'vertical'
-                canvas:
-                    Rectangle:
-                        pos: self.pos
-                        size: self.size
-                        source: root.bg_pic 
-                BoxLayout:
-                    size_hint: (1, 0.2)
-                    Label:
-                        size_hint: (0.9, 1)
-                        font_size: 48
-                        text: "Weather App"
-                    Button:
-                        size_hint: (0.1, 1)
-                        text: "setting"
-                        background_normal: 'icons/setting-148.png'
-                        on_press: _screen_manager.current = 'screen2'
-                BoxLayout:
-                    size_hint: (1, 0.8)
-                    orientation: 'vertical'
-                    canvas:
+    spacing: 4
+    orientation: 'vertical'
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'wether-photos/sunny.jpg' 
+    BoxLayout:
+        size_hint: (1, 0.2)
+        Label:
+            size_hint: (0.9, 1)
+            font_size: 48
+            text: "Weather App"
+        Button:
+            size_hint: (0.1, 1)
+            text: "setting"
+            background_normal: 'icons/setting-148.png'
+    BoxLayout:
+        size_hint: (1, 0.8)
+        orientation: 'vertical'
+        canvas:
 
-                        Color:
-                            rgba: (0, 0, 0, 0.6)
-                        Rectangle:
-                            pos: (self.center_x - self.width * 0.4, self.center_y * 0.4)
-                            size: (self.width * 0.8, self.height * 0.8)
-                    Image:
-                        source: "icons/cloudy-256.png"
-                    BoxLayout:
-                        Label:
-                            text: root.location
-                            font_size: 32
-                        Label:
-                            font_size: 24
-                            text: 'Temperature: ' + str(root.degree) 
-                        Label:
-                            font_size: 24
-                            text: 'Humidity: ' + str(root.humid) + '%'
-        Screen:
-            name: 'screen2'
-            BoxLayout:
-                spacing: 4
-                orientation: 'vertical'
-                canvas:
-                    Rectangle:
-                        pos: self.pos
-                        size: self.size
-                        source: 'wether-photos/sunny.jpg'
-                BoxLayout:
-                    size_hint: (1, 0.2) 
-                    #TODO change to image
-                    # Image:
-                        # source: 'icons/back.png'
-                    Button: # temp
-                        text: "Back"
-                        background_normal: "icons/back.png"
-                        size_hint: (0.1, 1)
-                        on_press: _screen_manager.current = 'screen1'
-                    Label: 
-                        size_hint: (0.9, 1)
-                        font_size: 48
-                        text: "Location"
-                GridLayout:
-                    size_hint: (1, 0.8)
-                    cols: 3
-                    padding: [100] * 4
-                    ToggleButton:
-                        text: "Taipei"
-                        group: 'area'
-                        on_press: root.change_location('Taipei')
-                    ToggleButton:
-                        group: 'area'
-                        text: "Taoyuan"
-                        on_press: root.change_location('Taoyuan')
-                    ToggleButton:
-                        group: 'area'
-                        text: "Keelung"
-                        on_press: root.change_location('Keelung')
-                    ToggleButton:
-                        group: 'area'
-                        text: "Hsinchu"
-                        on_press: root.change_location('Hsinchu')
+            Color:
+                rgba: (0, 0, 0, 0.6)
+            Rectangle:
+                pos: (self.center_x - self.width * 0.4, self.center_y * 0.4)
+                size: (self.width * 0.8, self.height * 0.8)
+        Image:
+            source: "icons/cloudy-256.png"
+        BoxLayout:
+            Label:
+                text: 'location'
+                font_size: 32
+            Label:
+                font_size: 24
+                text: 'Temperature: ' + str(root.degree) 
+            Label:
+                font_size: 24
+                text: 'Humidity: ' + str(root.humid) + '%'
+
