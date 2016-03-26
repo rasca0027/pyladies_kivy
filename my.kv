@@ -46,45 +46,6 @@
                             text: 'Humidity: ' + str(root.humid) + '%'
         Screen:
             name: 'screen2'
-            BoxLayout:
-                spacing: 4
-                orientation: 'vertical'
-                canvas:
-                    Rectangle:
-                        pos: self.pos
-                        size: self.size
-                        source: 'wether-photos/sunny.jpg'
-                BoxLayout:
-                    size_hint: (1, 0.2) 
-                    #TODO change to image
-                    # Image:
-                        # source: 'icons/back.png'
-                    Button: # temp
-                        text: "Back"
-                        background_normal: "icons/back.png"
-                        size_hint: (0.1, 1)
-                        on_press: _screen_manager.current = 'screen1'
-                    Label: 
-                        size_hint: (0.9, 1)
-                        font_size: 48
-                        text: "Location"
-                GridLayout:
-                    size_hint: (1, 0.8)
-                    cols: 3
-                    padding: [100] * 4
-                    ToggleButton:
-                        text: "Taipei"
-                        group: 'area'
-                        on_press: root.change_location('Taipei')
-                    ToggleButton:
-                        group: 'area'
-                        text: "Taoyuan"
-                        on_press: root.change_location('Taoyuan')
-                    ToggleButton:
-                        group: 'area'
-                        text: "Keelung"
-                        on_press: root.change_location('Keelung')
-                    ToggleButton:
-                        group: 'area'
-                        text: "Hsinchu"
-                        on_press: root.change_location('Hsinchu')
+            Button:
+                text: 'Back'
+                on_press: _screen_manager.current = 'screen1'
