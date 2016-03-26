@@ -6,7 +6,8 @@ from kivy.uix.label import Label
 class MyApp(App):
 
     def build(self):
-        return Label(text='Hello world')
+        label = Label(text='PyLadies Rocks')
+        return label
 
 
 MyApp().run()
