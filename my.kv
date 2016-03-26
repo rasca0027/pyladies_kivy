@@ -56,10 +56,7 @@
                         source: 'wether-photos/sunny.jpg'
                 BoxLayout:
                     size_hint: (1, 0.2) 
-                    #TODO change to image
-                    # Image:
-                        # source: 'icons/back.png'
-                    Button: # temp
+                    Button: 
                         text: "Back"
                         background_normal: "icons/back.png"
                         size_hint: (0.1, 1)
@@ -75,16 +72,12 @@
                     ToggleButton:
                         text: "Taipei"
                         group: 'area'
-                        on_press: root.change_location('Taipei')
                     ToggleButton:
                         group: 'area'
                         text: "Taoyuan"
-                        on_press: root.change_location('Taoyuan')
                     ToggleButton:
                         group: 'area'
                         text: "Keelung"
-                        on_press: root.change_location('Keelung')
                     ToggleButton:
                         group: 'area'
                         text: "Hsinchu"
-                        on_press: root.change_location('Hsinchu')

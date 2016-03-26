@@ -4,7 +4,7 @@ from kivy.properties import NumericProperty, StringProperty
 from kivy.network.urlrequest import UrlRequest
 
 
-APP_ID = '93b4bc2c1a8637730962f114155febb5'
+APP_ID = 'YOUR API KEY' 
 url = 'http://api.openweathermap.org/data/2.5/weather?q=%s&appid=%s'
 
 
@@ -39,10 +39,6 @@ class WeatherDashboard(BoxLayout):
             self.bg_pic = 'wether-photos/cloudy.jpg'
             self.weather_icon = 'icons/cloudy-256.png'
     
-    def change_location(self, cityname):
-        self.location = cityname
-        req = UrlRequest(url % (cityname, APP_ID), self.got_weather)
-        print cityname
 
 class MyApp(App):
 
