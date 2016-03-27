@@ -1,0 +1,24 @@
+BoxLayout:
+    orientation: "vertical"
+    pos_hint: {'y':0.5}
+
+    FormInput:
+        label_text: "Category"
+    FormInput:
+        label_text: "Name"
+    FormInput:
+        label_text: "Detail"
+
+<FormInput>:
+    size_hint_y: None
+    height: 40
+    Label:
+        size_hint_y: None
+        height: 40
+        size_hint_x: 0.3
+        text: root.label_text
+        color: (1, 1, 1, 1)
+    TextInput:
+        size_hint_x: 0.7
+        size_hint_y: None
+        height: 40
