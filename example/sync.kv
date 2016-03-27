@@ -1,0 +1,6 @@
+PasswordCheck:
+    Label:
+        text: "{} is {}".format(user_input.text, root.message)
+    TextInput:
+        id: user_input
+        on_text: root.validate(self.text)
