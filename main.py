@@ -2,6 +2,7 @@ from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 from kivy.properties import NumericProperty, StringProperty
 from kivy.network.urlrequest import UrlRequest
+from kivy.clock import Clock
 
 
 APP_ID = '93b4bc2c1a8637730962f114155febb5'
@@ -44,10 +45,17 @@ class WeatherDashboard(BoxLayout):
         req = UrlRequest(url % (cityname, APP_ID), self.got_weather)
         print cityname
 
+    def update(self, dt):
+        req = UrlRequest(url % (self.location, APP_ID), self.got_weather)
+        print 'update'
+
 class MyApp(App):
 
     def build(self):
-        return WeatherDashboard()
+        weatherapp = WeatherDashboard()
+        # update every 3 minute
+        Clock.schedule_interval(weatherapp.update, 60.0 / 1.0)
+        return weatherapp
 
 
 if __name__ == '__main__':
