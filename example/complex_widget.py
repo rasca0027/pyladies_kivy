@@ -1,8 +1,7 @@
-# examples/complex_widget.py
+# examples/complex_widget.py, c.kv
 from kivy.app import App
 from kivy.properties import StringProperty
 from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.label import Label
 
 
 class FormInput(BoxLayout):
