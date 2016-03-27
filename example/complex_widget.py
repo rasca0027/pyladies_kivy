@@ -1,4 +1,4 @@
-# examples/complex_widget.py, c.kv
+# examples/complex_widget.py, cw.kv
 from kivy.app import App
 from kivy.properties import StringProperty
 from kivy.uix.boxlayout import BoxLayout
